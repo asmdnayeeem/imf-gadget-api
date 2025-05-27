@@ -148,6 +148,24 @@ export const swaggerSpec = {
         security: [{ bearerAuth: [] }],
       },
     },
+    "/gadgets/filter": {
+      get: {
+        tags: ["Gadgets"],
+        summary: "Get gadgets by status",
+        parameters: [
+          {
+            name: "status",
+            in: "query",
+            required: true,
+            schema: { type: "string" },
+          },
+        ],
+        responses: {
+          200: { description: "List of gadgets by status" },
+        },
+        security: [{ bearerAuth: [] }],
+      },
+    },
   },
   components: {
     securitySchemes: {
